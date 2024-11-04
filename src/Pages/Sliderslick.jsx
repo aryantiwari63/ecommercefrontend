@@ -143,6 +143,8 @@
 
 // export default SimpleSlider;
 
+
+
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -152,7 +154,7 @@ import clothscat2 from "../images/clothscat2.jpg";
 import furniture from "../images/furniture.png";
 import electronicscat from "../images/electronicscat.jpg";
 import shoescat from "../images/shoescat.jpg";
-
+import "../Styles/slider.css"
 function SimpleSlider() {
   const settings = {
     dots: true,
@@ -213,14 +215,13 @@ function PrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", left: 10, zIndex: 2 }}
+      style={{ ...style, display: "block",  left: 10, zIndex: 2 }}
       onClick={onClick}
     >
-      <button className="custom-prev-arrow">&gt;</button>
+      <button className="custom-prev-arrow">&lt;</button>
     </div>
   );
 }
 
 export default SimpleSlider;
-
 

@@ -65,12 +65,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setProfileUrl } from '../Redux/Slices/profileSlice';
+import { useNavigate } from 'react-router-dom';
 
 function UploadProfileImage() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [localProfileUrl, setLocalProfileUrl] = useState('');
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -105,6 +106,7 @@ function UploadProfileImage() {
       );
       
       dispatch(setProfileUrl(response.data.user.image));
+      navigate("/profile")
     } catch (error) {
       console.error('Error uploading file:', error);
     }

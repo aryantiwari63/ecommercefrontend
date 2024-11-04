@@ -103,7 +103,7 @@ import borosil from "../images/borosil_blue_new.png";
 import '../Styles/Navbar.css';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-
+import User from '../images/user.jpg';
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -133,7 +133,7 @@ function Navbar() {
   useEffect(() => {
     closeMobileMenu();
   }, [location]);
-
+  
   return (
     <div className="w-full">
       <nav className="flex items-center justify-between p-4">
@@ -160,7 +160,7 @@ function Navbar() {
             )}
             <span className='ml-1'>cart</span>
           </div>
-          <Link to="/profile" onClick={closeMobileMenu} className='py-4'><div className='flex'><img src={profileUrl} className='rounded-full h-10 w-10'/></div></Link>
+          <Link to="/profile" onClick={closeMobileMenu} className='py-4'><div className='flex'><img src={profileUrl ? profileUrl : User} className='rounded-full h-10 w-10'/></div></Link>
 
           
         </div>

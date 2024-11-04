@@ -193,6 +193,8 @@ import Cardpaymethod from './Pages/cardpaymethod';
 import Cancel from './Pages/Cancel';
 import Success from  './Pages/Success';
 import Paypalpage from './Pages/Paypalpage';
+import A from './Pages/A';
+import B from './Pages/B';
 
 function App() {
   return (
@@ -232,6 +234,8 @@ function App() {
         <Route path="/success" element={<Success/>} />
         <Route path="/cancel" element={<Cancel/>} />
         <Route path="/paypal" element={<Paypalpage/>}/>
+        <Route path="/a" element={<A  category="fashion"/>}/>
+        <Route path="/b/:id" element={<B  category="fashion"/>}/>
       </Routes>
     </div>
   );

@@ -109,11 +109,12 @@ function Profile() {
       </div>
     </div>
 
-    <div className='mt-10 text-left text-[14px] shadow-2xl font-medium mx-2'>
-        <p className='mb-2'>FAQs</p>
-        <p className='mb-2'>ABOUT US</p>
-        <p className='mb-2'>TERMS OF USE</p>
-        <p>PRIVACY POLICY</p>
+  
+    <div className='my-7  text-left text-[14px] shadow-xl font-medium mx-4'>
+        <p className='mb-2'><a href='/faq'>FAQs</a></p>
+        <p className='mb-2'><a href=''>ABOUT US</a></p>
+        <p className='mb-2'><a>TERMS OF USE</a></p>
+        <p><a href='/privacypolicy'>PRIVACY POLICY</a></p>
     </div>
   </div>
    

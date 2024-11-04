@@ -1,5 +1,5 @@
 .custom-next-arrow, .custom-prev-arrow {
-    background-color: #3498db;
+    /* background-color: #3498db; */
     border: none;
     color: white;
     padding: 10px;
@@ -8,7 +8,7 @@
   }
   
   .custom-next-arrow:hover, .custom-prev-arrow:hover {
-    background-color: #2980b9;
+    /* background-color: #2980b9; */
   }
   
   .slick-prev:before, .slick-next:before {
@@ -40,7 +40,7 @@
   
   .custom-next-arrow,
   .custom-prev-arrow {
-    background-color: #3498db;
+    /* background-color: #3498db; */
     border: none;
     color: white;
     padding: 10px;
@@ -60,10 +60,10 @@
     left: -30px; /* Adjust based on the arrow size */
   }
   
-  .custom-next-arrow:hover,
+  /* .custom-next-arrow:hover,
   .custom-prev-arrow:hover {
     background-color: #2980b9;
-  }
+  } */
   
   .slick-prev:before,
   .slick-next:before {

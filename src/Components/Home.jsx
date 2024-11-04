@@ -12,6 +12,7 @@ import shoesbanner from '../images/Comfy-Footwear.jpg'
 import Slickslide from '../Pages/Sliderslick';
 import EmblaCarouselComponent from '../Pages/Emblaslider';
 import Navnew from './Navnew';
+import Slidertest from './Slidertest';
 
 function Home() {
 
@@ -34,10 +35,11 @@ function Home() {
         <img src={shoesbanner} />
         </div>
       
-        <Shoplook/>
-        <Slickslide/>
-        <EmblaCarouselComponent/>
-        <Footer/>
+        {/* <Shoplook/>*/}
+        <Slickslide/> 
+        {/*  <EmblaCarouselComponent/>
+       <Slidertest/>*/}
+        <Footer/> 
       
     </div>
   )

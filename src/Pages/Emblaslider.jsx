@@ -29,10 +29,10 @@ function EmblaCarouselComponent() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="embla w-full">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container flex">
-          <div className="embla__slide flex-[0_0_100%]">
+    <div className="embla w-full w-[500px] mx-auto">
+      <div className="embla__viewport w-[300px] ml-[100px]" ref={emblaRef}>
+        <div className="embla__container flex w-full">
+          <div className="embla__slide flex-[0_0_100%] w-full">
             <img src={clothscat2} alt="Slide 1" className="w-full h-auto" />
           </div>
           <div className="embla__slide flex-[0_0_100%]">

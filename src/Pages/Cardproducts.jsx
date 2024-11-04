@@ -203,13 +203,13 @@ function Cardproducts() {
 
   return (
     <div className='mt-32'>
-      <div className='flex font-bold list-none justify-around p-6 text-xl '><li>Product</li><li>Price</li><li>Quantity</li><li>Total</li></div>
+      <div className='flex font-bold list-none justify-between md:justify-evenly  p-3 sm:p-6 text-xl '><li>Product</li><li>Price</li><li>Quantity</li><li>Total</li></div>
       {cartItems.length > 0 ? (
         cartItems.map(item => (
-          <div key={item.productId} className='mt-10 bg-[rgb(255,255,255)] p-4 rounded-2xl shadow-xl' onClick={()=>{productpageopen(item.productId)}}>
-            <div className='flex justify-between mb-6 w-[92%]'>
+          <div key={item.productId} className='mt-10 bg-[rgb(255,255,255)] p-4  rounded-2xl shadow-xl md:pl-[20px] lg:pl-[50px] md:mx-[70px]' onClick={()=>{productpageopen(item.productId)}}>
+            <div className='flex justify-between mb-6 w-full md:w-[96%] lg:w-[92%] lg:px-10'>
               <div className='h-[100px] w-[172px] text-center'>
-                <img src={item.imageUrl} alt={item.name} className='h-[70px] w-[80px] ml-[46px]'/><p>{item.name}</p>
+                <img src={item.imageUrl} alt={item.name} className='h-[70px] w-[80px] md:ml-[46px]'/><p className='text-left mt-[6px] w-[100px] md:w-auto'>{item.name}</p>
               </div>
               <div className='w-[60px] text-start'>{item.price}</div>
               <div className="flex items-center gap-2 h-[40px]">

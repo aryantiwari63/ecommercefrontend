@@ -36,7 +36,7 @@
 //                     <span className='font-bold text-xl '> 3 out of 5</span>
 //                 </div>
 //             </div>
-           
+
 //             <div className='mt-10'>
 //                 <h2 className='font-bold text-2xl'>Customer reviews</h2>
 //                 <div className='flex justify-around mt-10'>
@@ -46,7 +46,7 @@
 //                 <span className='text-yellow-300 text-[46px]'> ★ </span>
 //                 <span className='text-yellow-300 text-[46px]'> ★ </span>
 //                 <span className='text-yellow-300 text-[46px]'> ★ </span>
-                
+
 //                 <p className='space-x-8'><span>10 customers rating</span>
 //                 <span className='font-bold'>4 out of 5</span></p>
 //                </div>
@@ -150,53 +150,53 @@ function ReviewComponent({ productId }) {
 
     const fetchReviews = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/reviews/${productId}`);
-          const { reviews, ratingsPercentage, averageRating, totalReviews } = response.data;
-        
-          // Use the fetched data appropriately
-          console.log("reviews:",reviews);
-          console.log("ratingsPercentage:",ratingsPercentage);
-          console.log("averageRating:",averageRating);
-          console.log("totalReviews:",totalReviews);
-          setReviews(reviews);
-          setAverageRating(averageRating);
-          setTotalReviews(totalReviews);
-          setRatingsPercentage(ratingsPercentage || []);
-         
+            const response = await axios.get(`http://localhost:5000/api/reviews/${productId}`);
+            const { reviews, ratingsPercentage, averageRating, totalReviews } = response.data;
+
+            // Use the fetched data appropriately
+            console.log("reviews:", reviews);
+            console.log("ratingsPercentage:", ratingsPercentage);
+            console.log("averageRating:", averageRating);
+            console.log("totalReviews:", totalReviews);
+            setReviews(reviews);
+            setAverageRating(averageRating);
+            setTotalReviews(totalReviews);
+            setRatingsPercentage(ratingsPercentage || []);
+
         } catch (error) {
-          console.error('Error fetching reviews:', error.message);
+            console.error('Error fetching reviews:', error.message);
         }
-      };
+    };
 
     const handleSubmitReview = () => {
         const token = localStorage.getItem('token');
-        axios.post('http://localhost:5000/api/reviews', { 
-            productId, 
-            rating 
+        axios.post('http://localhost:5000/api/reviews', {
+            productId,
+            rating
         }, {
             headers: {
-                'Authorization': `${token}` 
+                'Authorization': `${token}`
             }
         })
             .then(response => {
                 console.log('Review submitted:', response.data);
                 setIsClicked(true);
                 fetchReviews();
-                
+
                 // axios.get(`http://localhost:5000/api/reviews/${productId}`)
-                    // .then(response => {
-                    //     const data = response.data;
-                    //     setReviews(data.reviews);
-                    //     setAverageRating(data.averageRating);
-                    //     setTotalReviews(data.totalReviews);
-                    //     setRatingsPercentage(data.ratingsPercentage || []);
-                    //     console.log("all", setReviews,setAverageRating,setTotalReviews,setRatingsPercentage);
-                    // })
-                    // .catch(error => {
-                    //     console.error('Error fetching review data:', error);
-                    // });
-                   
-                      
+                // .then(response => {
+                //     const data = response.data;
+                //     setReviews(data.reviews);
+                //     setAverageRating(data.averageRating);
+                //     setTotalReviews(data.totalReviews);
+                //     setRatingsPercentage(data.ratingsPercentage || []);
+                //     console.log("all", setReviews,setAverageRating,setTotalReviews,setRatingsPercentage);
+                // })
+                // .catch(error => {
+                //     console.error('Error fetching review data:', error);
+                // });
+
+
             })
             .catch(error => {
                 console.error('Error submitting review:', error);
@@ -205,42 +205,45 @@ function ReviewComponent({ productId }) {
 
     return (
         <div className='mt-10'>
-            <h2 className='font-bold text-xl mb-10'>Customer Reviews</h2>
-           
-         <div className='flex flex-col md:flex-row justify-around'>
-         
-            <div>
-            <div className='flex ml-[20%] md:ml-[0%]'>
-                 <span className='text-yellow-300 text-[46px]'> ★ </span>
-                 <span className='text-yellow-300 text-[46px]'> ★ </span>
-                 <span className='text-yellow-300 text-[46px]'> ★ </span>
-                 <span className='text-yellow-300 text-[46px]'> ★ </span>
-                 <span className='text-yellow-300 text-[46px]'> ★ </span>
-            </div>
-            <p>{totalReviews} customers rating</p>
-            <p>{averageRating.toFixed(1)} out of 5</p>
-               </div>
-            <div className='ml-[20%] mt-5 md:ml-[0%]'>
-            {[5, 4, 3, 2, 1].map((star, index) => (
-                <div key={star} className="flex items-center space-x-2">
-                    <span>{star} star</span>
-                    <div className="relative w-[180px] h-4 bg-gray-300 rounded-full">
-                        <div
-                            className="absolute top-0 left-0 h-full bg-green-700 rounded-full"
-                            style={{ width: `${ratingsPercentage[star - 1] || 0}%` }} 
-                        />
-                    </div>
-                   <span>{ratingsPercentage[star - 1] ? ratingsPercentage[star - 1] : 0}%</span>   {/*ratingsPercentage[star - 1].toFixed(2) decimal number*/}
-                </div>
-            ))}
+            <h2 className='font-bold text-xl mb-10'>Customer Ratings</h2>
 
-           </div>
-      </div>
+            <div className='flex flex-col md:flex-row justify-around'>
+
+                <div>
+                    <div className='flex ml-[20%] md:ml-[0%]'>
+                        <span className='text-yellow-300 text-[46px]'> ★ </span>
+                        <span className='text-yellow-300 text-[46px]'> ★ </span>
+                        <span className='text-yellow-300 text-[46px]'> ★ </span>
+                        <span className='text-yellow-300 text-[46px]'> ★ </span>
+                        <span className='text-yellow-300 text-[46px]'> ★ </span>
+                    </div>
+                    <p>{totalReviews} customers rating</p>
+                    <p>{averageRating.toFixed(1)} out of 5</p>
+                </div>
+                <div className='ml-[20%] mt-5 md:ml-[0%]'>
+                    {[5, 4, 3, 2, 1].map((star, index) => (
+                        <div key={star} className="flex items-center space-x-2">
+                            <span>{star} star</span>
+                            <div className="relative w-[180px] h-4 bg-gray-300 rounded-full">
+                                <div
+                                    className="absolute top-0 left-0 h-full bg-green-700 rounded-full"
+                                    style={{ width: `${ratingsPercentage[star - 1] || 0}%` }}
+                                />
+                            </div>
+                            <span>  {ratingsPercentage[star - 1]
+                                ? parseFloat(ratingsPercentage[star - 1].toFixed(2))
+                                : 0
+                            }%</span>
+                        </div>
+                    ))}
+
+                </div>
+            </div>
 
 
 
             <div className="mt-8">
-                <h3 className='font-bold text-xl mb-3'>Submit Your Review</h3>
+                <h3 className='font-bold text-xl mb-3'>Submit Your Rating</h3>
                 <div className='ml-[4%]'>
                     {[1, 2, 3, 4, 5].map((star) => (
                         <span
@@ -269,6 +272,8 @@ function ReviewComponent({ productId }) {
                     </span>
                 </div>
             </div>
+
+
         </div>
     );
 }
